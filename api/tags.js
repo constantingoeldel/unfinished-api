@@ -35,7 +35,6 @@ export default async (req, res) => {
 
   // Select the "users" collection from the database
   const collection = await db.collection('Tags')
-  console.log(collection)
 
   // Select the users collection from the database
   const tags = await collection.find({}).toArray()
