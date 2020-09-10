@@ -1,8 +1,5 @@
 import server from './api/server'
+require('dotenv').config()
 
-// const mongoDBUrl = process.env.MONGO_DB_URL
-// setupMongoDBConnection(mongoDBUrl)
-
-const port = process.env.PORT
-
+const port = process.env.PORT || 4001
 server.listen(port, () => console.log(`SCAAPI listening at http://localhost:${port}`))
