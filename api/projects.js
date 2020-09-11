@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import connectToDatabase from './services'
+import { connectToDatabase, filterTags } from './services'
 
 const router = Router()
 router.get('/', (req, res, next) => {
