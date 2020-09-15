@@ -2,7 +2,6 @@ import { parse } from 'url'
 import { MongoClient } from 'mongodb'
 
 export async function connectToDatabase(uri) {
-  console.log(uri)
   // If no connection is cached, create a new one
   const client = await MongoClient.connect(uri, { useNewUrlParser: true }).catch((error) =>
     console.log('error while connecting to MongoDB', error)
