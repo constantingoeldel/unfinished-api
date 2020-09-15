@@ -2,6 +2,6 @@
   "name": "unfinished-api",
   "version": 2,
   "env": {
-    "MONGODB_URI": "@mongoDB"
+    "MONGODB_URI": "@mongodb"
   }
 }
