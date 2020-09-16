@@ -11,7 +11,6 @@ var _services = require("./services");
 
 var router = (0, _express.Router)();
 router.get('/', function (req, res, next) {
-  console.log(process.env.MONGODB_URI);
   (0, _services.connectToDatabase)(process.env.MONGODB_URI).then(function (db) {
     return db.collection('Tags');
   })["catch"](function (error) {
