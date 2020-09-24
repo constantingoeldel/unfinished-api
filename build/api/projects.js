@@ -25,5 +25,16 @@ router.get('/', function (req, res, next) {
     return console.log('Error while responding:', error);
   });
 });
+router.post('/', function (req, res, next) {
+  (0, _services.connectToDatabase)(process.env.MONGODB_URI).then(function (db) {
+    return db.collection('Projects');
+  }).then(function (collection) {
+    return collection.insertOne(req.body);
+  }).then(function (result) {
+    return res.json(result);
+  })["catch"](function (error) {
+    return console.log(error);
+  });
+});
 var _default = router;
 exports["default"] = _default;

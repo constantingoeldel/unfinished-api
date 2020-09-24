@@ -4,7 +4,8 @@
   "description": "The api for my project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js"
+    "start": "nodemon --exec babel-node src/index.js",
+    "build": "npx babel src --out-dir build"
   },
   "author": "",
   "license": "ISC",

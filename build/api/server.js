@@ -17,6 +17,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var server = (0, _express["default"])();
 server.use((0, _cors["default"])());
+server.use(_express["default"].json());
+server.use(_express["default"].urlencoded({
+  extended: true
+}));
 server.use('/api/projects', _projects["default"]);
 server.use('/api/tags', _tags["default"]);
 server.get('/', function (req, res) {
