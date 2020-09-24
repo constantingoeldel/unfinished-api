@@ -11,5 +11,12 @@ router.get('/', (req, res, next) => {
     .then((tags) => res.json(tags))
     .catch((error) => console.log('Error while responding:', error))
 })
+router.post('/', (req, res, next) => {
+  connectToDatabase(process.env.MONGODB_URI)
+    .then((db) => db.collection('Projects'))
+    .then((collection) => collection.insertOne(req.body))
+    .then((result) => res.json(result))
+    .catch((error) => console.log(error))
+})
 
 export default router
